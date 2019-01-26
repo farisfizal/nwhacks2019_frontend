@@ -4,8 +4,11 @@
 	"description": "Read stuff without actually reading it?",
 	"manifest_version": 2,
 	"default_locale": "en",
-	"background":{
+	"background": {
 		"scripts": ["main.js"],
 		"persistent": true
+	},
+	"browser_action": {
+		"default_popup": "popup.html"
 	}
 }
