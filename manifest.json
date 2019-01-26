@@ -2,5 +2,6 @@
 	"name": "NWHacks2019",
 	"version": "1.0",
 	"description": "Read stuff without actually reading it?",
-	"manifest_version": 2
+	"manifest_version": 2,
+	"default_locale": "en"
 }
