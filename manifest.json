@@ -3,7 +3,7 @@
 	"version": "1.0",
 	"description": "Read stuff without actually reading it?",
 	"manifest_version": 2,
-	"default_locale": "en"
+	"default_locale": "en",
 	"background":{
 		"scripts": ["main.js"],
 		"persistent": true
