@@ -3,10 +3,9 @@
 	"version": "1.0",
 	"description": "Read stuff without actually reading it?",
 	"manifest_version": 2,
-	"default_locale": "en",
 	"background": {
-		"scripts": ["main.js"],
-		"persistent": true
+		"scripts": ["js/background.js"],
+		"persistent": false
 	},
 	"browser_action": {
 		"default_popup": "popup.html"
