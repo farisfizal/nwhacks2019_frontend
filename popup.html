@@ -27,19 +27,5 @@
     </head>
     <body>
 		<button><h1 class="title">Hello From Faroos</h1></button>
-		<script>
-			$( "a" ).hover(
-			function() {
-				$( this ).append( $( "<span> ***</span>" ) );
-			}, function() {
-				$( this ).find( "span:last" ).remove();
-			}
-			);
-			
-			$( "a.fade" ).hover(function() {
-			$( this ).fadeOut( 100 );
-			$( this ).fadeIn( 500 );
-			});
-		</script>
     </body>
   </html>
