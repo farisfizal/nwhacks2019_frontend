@@ -1,30 +1,29 @@
-// function update() {
-//     $( "a" ).hover(
-//         function() {
-//             // console.log(this.href);
-//             $.ajax({
-//                 url: `https://summarize-services.herokuapp.com/summarize?url=${this.href}`,
-//                 method: "GET",
-//                 data: {
-//                     a: "a"
-//                 },
-//                 success: function(data) {
-//                     console.log(typeof(this));
-//                     tippy(this, {'content': data.summary});
-//                     console.log('success', data.summary);
-//                 },
-//                 error: function (xhr) {
-//                     console.log('error', xhr);
-//                 }
-//             });
-//         }
-//     );
-// }
-//
-// update();
-//
-//
-//
+function update() {
+    $( "a" ).hover(
+        function() {
+            // console.log(this.href);
+            console.log("hovering on", this);
+            var that = this;
+            $.ajax({
+                url: `https://summarize-services.herokuapp.com/summarize?url=${this.href}`,
+                method: "GET",
+                success: function(data) {
+                    that.setAttribute('title', data.summary);
+                    that.setAttribute('data-toggle', "tooltip");
+                    console.log("hovering on", that)
+                },
+                error: function (xhr) {
+                    console.log('error', xhr);
+                }
+            });
+        }
+    );
+}
+
+update();
+
+
+
 // // Select the node that will be observed for mutations
 // var targetNode = document.body;
 // console.log(targetNode);
@@ -51,7 +50,7 @@
 //
 // // Start observing the target node for configured mutations
 // observer.observe(targetNode, config);
-
+//
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
     switch (request.type){
