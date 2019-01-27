@@ -4,19 +4,22 @@ function update() {
             // console.log(this.href);
             console.log("hovering on", this);
             var that = this;
-            $.ajax({
-                url: `https://summarize-services.herokuapp.com/summarize?url=${this.href}`,
-                method: "GET",
-                success: function(data) {
-                    that.setAttribute('title', data.summary);
-                    that.setAttribute('data-toggle', "tooltip");
-                    console.log("hovering on", that)
-                    $('[data-toggle="tooltip"]').tooltip();
-                },
-                error: function (xhr) {
-                    console.log('error', xhr);
-                }
-            });
+            if(this.getAttribute('data-requested') !== 'true') {
+                console.log("data-requested", this.getAttribute('data-requested'));
+                $.ajax({
+                    url: `https://summarize-services.herokuapp.com/summarize?url=${this.href}`,
+                    method: "GET",
+                    success: function (data) {
+                        that.setAttribute('title', data.summary);
+                        that.setAttribute('data-toggle', "tooltip");
+                        that.setAttribute('data-requested', "true");
+                        console.log("tooltip set", that)
+                    },
+                    error: function (xhr) {
+                        console.log('error', xhr);
+                    }
+                });
+            }
         }
     );
 }
