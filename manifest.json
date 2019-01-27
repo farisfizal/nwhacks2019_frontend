@@ -12,7 +12,7 @@
 		"default_icon": "icon.png"
 	},
 	"content_security_policy": "script-src 'self'  https://code.jquery.com; object-src 'self'",
-	"permissions": ["contextMenus", "tabs"],
+	"permissions": ["contextMenus", "activeTab"],
 	"content_scripts": [{
 		"js": ["js/jquery-1.10.2.js",
 			"js/tippy.js", "js/inject.js"],
