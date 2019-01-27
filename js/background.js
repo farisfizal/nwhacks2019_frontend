@@ -11,8 +11,9 @@ chrome.browserAction.onClicked.addListener(function (tab) {
 });
 
 
-var searchSummarizeApi = function(word){
+var searchSummarizeApi = function(word) {
     var query = word.selectionText;
+    alert(word.linkUrl);
     $.ajax({
         url: `https://summarize-services.herokuapp.com/summarize?url=${word.linkUrl}`,
         method: "GET",
@@ -20,6 +21,7 @@ var searchSummarizeApi = function(word){
             console.log(typeof(this));
             // tippy('a', {'content': data.summary});
             alert(data.summary);
+            tippy('a', {content: data.summary});
             console.log('success', data.summary);
         },
         error: function(xhr) {
