@@ -2,7 +2,7 @@ function update() {
     $( "a" ).hover(
         function() {
             $.ajax({
-                url: `https://summarize-service.herokuapp.com/summarize?url=${this.href},
+                url: `https://summarize-service.herokuapp.com/summarize?url=${this.href}`,
                 method: "GET",
                 data: {
                     a: "a"
