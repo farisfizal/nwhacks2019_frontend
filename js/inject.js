@@ -1,27 +1,29 @@
 function update() {
-    $("a").hover(
-        function () {
+    $( "a" ).hover(
+        function() {
+            // console.log(this.href);
             $.ajax({
-                url: `https://summarize-service.herokuapp.com/summarize?url=${this.href}`,
+                url: `https://summarize-services.herokuapp.com/summarize?url=${this.href}`,
                 method: "GET",
                 data: {
                     a: "a"
                 },
-                success: function (data) {
-                    console.log('success', data)
+                success: function(data) {
+                    console.log(typeof(this));
+                    tippy(this, {'content': data.summary});
+                    console.log('success', data.summary);
                 },
                 error: function (xhr) {
                     console.log('error', xhr);
                 }
-            });
-            tippy('a', {
-                'content': 'Thog dont care'
             });
         }
     );
 }
 
 update();
+
+
 
 // Select the node that will be observed for mutations
 var targetNode = document.body;

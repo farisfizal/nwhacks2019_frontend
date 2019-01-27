@@ -4,17 +4,12 @@
 	"description": "Read stuff without actually reading it?",
 	"manifest_version": 2,
 	"background": {
-		"scripts": ["js/background.js", "js/jquery-1.10.2.js","js/tippy.js"],
-		"persistent": false
+		"scripts": ["js/jquery-1.10.2.js","js/tippy.js","js/background.js"],
+		"persistent": true
 	},
 	"browser_action": {
 		"default_popup": "popup.html"
 	},
 	"content_security_policy": "script-src 'self' https://code.jquery.com; object-src 'self'",
-	"content_scripts": [{
-		"js": ["js/jquery-1.10.2.js",
-			"js/inject.js",
-		  	"js/tippy.js"],
-		"matches": ["<all_urls>"]
-	}]
+	"permissions": ["contextMenus"]
 }
