@@ -7,7 +7,7 @@ $(document).ready(function() {
             url: `https://summarize-services.herokuapp.com/summarize?url=${tabURL}`,
             method: "GET",
             success: function (data) {
-                var fake_percentage = data.fake_confidence * 100;
+                var fake_percentage = Math.floor(data.fake_confidence * 100);
                 document.getElementById("title").innerHTML = data.summary;
                 document.getElementById("type").innerHTML = 'Type = ' + data.fake_type;
                 document.getElementById("validity").innerHTML = 'Confidence = ' + fake_percentage + '%';
