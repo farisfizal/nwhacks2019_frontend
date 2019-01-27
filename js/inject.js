@@ -1,5 +1,5 @@
 function update() {
-    $( "a" ).hover(
+    $( "a" ).on('mouseenter',
         function() {
             // console.log(this.href);
             console.log("hovering on", this);
@@ -11,6 +11,7 @@ function update() {
                     that.setAttribute('title', data.summary);
                     that.setAttribute('data-toggle', "tooltip");
                     console.log("hovering on", that)
+                    $('[data-toggle="tooltip"]').tooltip();
                 },
                 error: function (xhr) {
                     console.log('error', xhr);

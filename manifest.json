@@ -14,7 +14,7 @@
 	"permissions": ["contextMenus"],
 	"content_scripts": [{
 		"js": ["js/jquery-1.10.2.js",
-			"js/tippy.js", "js/inject.js"],
+			"js/tippy.js", "js/inject.js", "js/bootstrap.min.js"],
 		"matches": ["<all_urls>"]
 	}]
 }
