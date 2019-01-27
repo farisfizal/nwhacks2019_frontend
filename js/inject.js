@@ -16,7 +16,8 @@ function update() {
 update();
 
 // Select the node that will be observed for mutations
-var targetNode = document.getElementById('a');
+var targetNode = document.body;
+console.log(targetNode);
 
 // Options for the observer (which mutations to observe)
 var config = {
