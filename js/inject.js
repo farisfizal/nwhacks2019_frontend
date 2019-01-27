@@ -1,5 +1,4 @@
 function update() {
-    console.log("something happened");
     $( "a" ).hover(
         function() {
             tippy('a', {'content': 'Thog dont care'});
@@ -28,7 +27,12 @@ var config = {
 
 // Callback function to execute when mutations are observed
 var callback = function (mutationsList, observer) {
-    update();
+    mutationsList.forEach(function(i) {
+        if(i.target.tagName === 'A') {
+            console.log("anchor tag changed.");
+            update();
+        }
+    });
 };
 
 // Create an observer instance linked to the callback function
