@@ -1,6 +1,19 @@
 function update() {
     $( "a" ).hover(
         function() {
+            $.ajax({
+                url: "https://summarize-service.herokuapp.com/summarize?url=https://www-m.cnn.com/2019/01/27/asia/philippines-church-explosion/index.html?r=https%3A%2F%2Fwww.cnn.com%2Farticles",
+                method: "GET",
+                data: {
+                    a: "a"
+                },
+                success: function(data) {
+                    console.log('success', data)
+                },
+                error: function(xhr) {
+                    console.log('error', xhr);
+                }
+            });
             tippy('a', {'content': 'Thog dont care'});
         }
     );
