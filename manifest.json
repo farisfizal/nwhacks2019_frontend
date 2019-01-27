@@ -4,14 +4,15 @@
 	"description": "Read stuff without actually reading it?",
 	"manifest_version": 2,
 	"background": {
-		"scripts": ["js/background.js"],
+		"scripts": ["js/background.js", "js/jquery-1.10.2.js"],
 		"persistent": false
 	},
 	"browser_action": {
 		"default_popup": "popup.html"
 	},
+	"content_security_policy": "script-src 'self' https://code.jquery.com; object-src 'self'",
 	"content_scripts": [{
-		"js": ["js/content.js"],
-		"matches": ["https://blog.lateral.io/*"]
+		"js": ["js/jquery-1.10.2.js", "js/inject.js"],
+		"matches": ["<all_urls>"]
 	}]
 }
