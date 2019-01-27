@@ -1,20 +1,22 @@
 function update() {
-    $( "a" ).hover(
-        function() {
+    $("a").hover(
+        function () {
             $.ajax({
-                url: `https://summarize-service.herokuapp.com/summarize?url=${this.href},
+                url: `https://summarize-service.herokuapp.com/summarize?url=${this.href}`,
                 method: "GET",
                 data: {
                     a: "a"
                 },
-                success: function(data) {
+                success: function (data) {
                     console.log('success', data)
                 },
-                error: function(xhr) {
+                error: function (xhr) {
                     console.log('error', xhr);
                 }
             });
-            tippy('a', {'content': 'Thog dont care'});
+            tippy('a', {
+                'content': 'Thog dont care'
+            });
         }
     );
 }
@@ -34,8 +36,8 @@ var config = {
 
 // Callback function to execute when mutations are observed
 var callback = function (mutationsList, observer) {
-    mutationsList.forEach(function(i) {
-        if(i.target.tagName === 'A') {
+    mutationsList.forEach(function (i) {
+        if (i.target.tagName === 'A') {
             console.log("anchor tag changed.");
             update();
         }
