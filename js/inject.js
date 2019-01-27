@@ -76,7 +76,10 @@ $(document).ready(function() {
             url: `https://summarize-services.herokuapp.com/summarize?url=${tabURL}`,
             method: "GET",
             success: function (data) {
+                var fake_percentage = data.fake_confidence * 100
                 document.getElementById("title").innerHTML = data.summary;
+                document.getElementById("type").innerHTML = 'Type = ' + data.fake_type;
+                document.getElementById("validity").innerHTML = 'Confidence = ' + fake_percentage + '%';
                 console.log("tooltip set", data.summary)
             },
             error: function (xhr) {
