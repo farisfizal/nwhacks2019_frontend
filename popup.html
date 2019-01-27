@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/uikit.min.css" />
         <script src="js/uikit.min.js"></script>
-        <script src="js/uikit-icons.min.js"></script>
+		<script src="js/uikit-icons.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<style>
 			button {
 			height: 200px;
@@ -15,10 +16,30 @@
 			color: #333333;
 			outline: none;
 			}
+			a {
+				cursor: default;
+			}
+			span {
+				color: red;
+			}
 		</style>
 		<title>NWHacks 2019 :)</title>
     </head>
     <body>
-      <button><h1 class="title">Hello From Faroos</h1></button>
+		<button><h1 class="title">Hello From Faroos</h1></button>
+		<script>
+			$( "a" ).hover(
+			function() {
+				$( this ).append( $( "<span> ***</span>" ) );
+			}, function() {
+				$( this ).find( "span:last" ).remove();
+			}
+			);
+			
+			$( "a.fade" ).hover(function() {
+			$( this ).fadeOut( 100 );
+			$( this ).fadeIn( 500 );
+			});
+		</script>
     </body>
   </html>
