@@ -17,13 +17,7 @@ function update() {
             tippy('a', {'content': 'Thog dont care'});
         }
     );
-
-    $("a.fade").hover(function() {
-        $( this ).fadeOut( 100 );
-        $( this ).fadeIn( 500 );
-    });
-
-};
+}
 
 update();
 
